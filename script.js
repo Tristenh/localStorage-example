@@ -11,3 +11,12 @@ function JSONParse() {
     inputArray = JSON.parse(inputJSON);
   }
 }
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let inputValue = input.value;
+  inputArray.push(inputValue);
+  inputValue = "";
+  displayResult();
+  saveScore();
+});

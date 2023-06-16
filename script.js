@@ -2,6 +2,7 @@ const form = document.querySelector(".form");
 const input = document.querySelector(".input");
 const submit = document.querySelector(".submit");
 const results = document.querySelector(".results");
+const reset = document.querySelector(".reset");
 
 let inputArray = [];
 
@@ -30,3 +31,15 @@ function displayResult() {
     results.appendChild(createEl);
   }
 }
+
+function saveScore() {
+  localStorage.setItem("inputValue", JSON.stringify(inputArray));
+}
+reset.addEventListener("click", function () {
+  inputArray = [];
+  input.value = "";
+  saveScore();
+  displayResult();
+});
+JSONParse();
+displayResult();

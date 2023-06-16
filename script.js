@@ -20,3 +20,13 @@ form.addEventListener("submit", function (event) {
   displayResult();
   saveScore();
 });
+
+function displayResult() {
+  results.innerHTML = "";
+  for (let i = 0; i < inputArray.length; i++) {
+    const displayInput = inputArray[i];
+    const createEl = document.createElement("div");
+    createEl.innerHTML = displayInput;
+    results.appendChild(createEl);
+  }
+}
